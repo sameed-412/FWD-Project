@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="aboutus.css" />
+    <!-- Include Bootstrap JavaScript and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@2.9.3/dist/umd/popper.min.js"></script>
+  </head>
+  <body>
+    <video autoplay muted loop id="video-background">
+      <source src="background.mp4" type="video/mp4" />
+    </video>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Weather App</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="#"
+                onclick="window.location.href='index.html';"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="#"
+                onclick="window.location.href='aboutUs.html';"
+                >About Us</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="box">
+      <center>Contents of the page</center>
+      <br />
+      <ul>
+        <li><a href="#motivation">Motivation</a></li>
+        <br />
+        <li><a href="#working">Working</a></li>
+        <br />
+        <li><a href="#advantages">Advantages and Disadvantages</a></li>
+        <br />
+        <li><a href="#technologies">Technologies Used</a></li>
+        <br />
+        <li><a href="#info">Team Info</a></li>
+        <br />
+      </ul>
+    </div>
+    <div class="content">
+      <a href="#motivation">
+        <img
+          src="arrow.jpeg"
+          alt="up arrow"
+          style="
+            height: 30px;
+            width: 30px;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: cyan;
+          "
+        />
+      </a>
+      <h2 id="motivation">
+        <center>Motivation to take the proposed project</center>
+      </h2>
+      <p>
+        Developing a live weather website can be a way to provide a valuable
+        service to the community. It helps people stay informed about weather
+        conditions, which is essential for safety and planning daily activities.
+        <br />It can play a crucial role in emergency preparedness and response.
+        During severe weather events, such a platform can provide real-time
+        updates and alerts to help residents and authorities make timely
+        decisions to protect lives and property. <br />Weather data collected
+        and presented through a live website can also be valuable for scientific
+        research. Meteorologists and climate scientists can use the data to
+        study weather patterns and climate trends, contributing to our
+        understanding of the Earth's climate system. <br />For regions dependent
+        on tourism, a live weather website can attract visitors by providing
+        accurate and up-to-date weather information. This can boost tourism and
+        benefit the local economy.
+      </p>
+      <br />
+      <h2 id="working"><center>Working</center></h2>
+      <p>
+        Revolves around the utilization of real-time weather data by using an
+        Application Programming Interface(API) to provide accurate data which
+        will then be displayed on the webpage. <br />By changing the time of day
+        or the date till up to two weeks ahead, we can get the weather forecast.
+        Utilization of an API helps provide the correct forecast with real-time
+        updation of any sudden changes or warnings in the weather that may or
+        may not occur
+      </p>
+      <br />
+      <h2 id="advantages"><center>Advantages & disadvantages</center></h2>
+      <!-- <p>
+        <b>Advantages:</b> <br />
+        Real-Time Information: Users can access up-to-the-minute weather
+        information
+      </p> -->
+      <p>
+        <b>Advantages:</b> <br />
+        Real-Time Information: Users can access up-to-the-minute weather
+        information, which is crucial for planning daily activities, travel, and
+        safety during severe weather events.<br />
+        Convenience: It provides a convenient way for users to check weather
+        conditions anytime, anywhere, using their computers or mobile
+        devices.<br />
+        Customisation: Users can often customise the website to receive weather
+        information specific to their location, which enhances the user
+        experience.<br /><br />
+
+        <b>Disadvantages:</b><br />
+        Accuracy: Weather predictions are not always 100% accurate, and users
+        may become frustrated if they rely solely on website data for critical
+        decisions.<br />
+        Data Reliance: The project heavily depends on access to accurate and
+        timely weather data, which may come with associated costs and data
+        source limitations.<br />
+        Competitive Market: The market for weather websites is competitive, with
+        many established players, which can make it challenging to gain a
+        significant user base.
+      </p>
+      <br />
+      <h2 id="technologies">
+        <center>Technologies used for developing the project</center>
+      </h2>
+      <p><ul>
+        
+        <li>HTML <br /></li>
+        <li>CSS <br /></li>
+        <li>Javascript <br /></li>
+        <li>API key <br /></li>
+        <li>Bootstrap <br /></li>
+        <li>JQuery</li>
+      
+    </ul>
+      </p>
+      <br />
+      <h2 id="info"><center>Team Info</center></h2>
+      <p>
+        <h4>Our Team Members</h4> Bevin Johnson - C036<br />
+        Utkarsh Tanna - C042<br />
+        Sameed Arif - C049<br>
+        <a href="https://docs.google.com/presentation/d/16BbP6wHX6gknb8DDYIZvjSQJod7p3Id_mYQPwMCG-wc/edit?usp=sharing" class="implink" target="_blank">Presentation</a><br>
+        <a href="https://docs.google.com/document/d/1M7373EHeehFZixoM2Uqy9pvusI_4LRlN/edit?usp=sharing&ouid=108524133374948857942&rtpof=true&sd=true" class="implink" target="_blank">Report</a>
+
+      </p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@2.9.3/dist/umd/popper.min.js"></script>
+  </body>
+</html>

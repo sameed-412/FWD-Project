@@ -1,0 +1,93 @@
+.box {
+  width: 300px;
+  height: 400px;
+  background-color: burlywood;
+  float: inline-start;
+  border-radius: 30px;
+  margin-top: 2%;
+  margin-left: 2%;
+  border: 1px solid;
+  position: fixed;
+}
+.box a {
+  text-decoration: none;
+}
+.implink {
+  text-decoration: none;
+}
+.content {
+  margin-left: 340px;
+  margin-top: 2%;
+  font-size: 20px;
+  font-family: Helvetica;
+  padding-right: 40px;
+}
+body {
+  background-color: cyan;
+}
+.navbar-nav .nav-item + .nav-item {
+  margin-left: 20px; /* Adjust the value to control spacing */
+}
+#video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1; /* Place the video behind other content */
+  opacity: 0.7;
+}
+@media (max-width: 820px) {
+  /* Your CSS styles for screens with a width up to 650px */
+  .body {
+    /* Example styles for the body tag at this screen width */
+    /* font-size: 14px; */
+    display: block;
+  }
+  .box {
+    width: 250px;
+    height: 400px;
+    background-color: burlywood;
+    float: inline-start;
+    border-radius: 30px;
+    margin-top: 2%;
+    margin-left: 2%;
+    border: 1px solid;
+    position: fixed;
+  }
+  .content {
+    margin-left: 300px;
+    margin-top: 2%;
+    font-size: 20px;
+    font-family: Helvetica;
+    padding-right: 40px;
+    margin-top: 20px;
+  }
+}
+/* Media query for screens with a width of 450px or less */
+@media (max-width: 450px) {
+  .body {
+    /* Example styles for the body tag at this screen width */
+    /* font-size: 14px; */
+    display: block;
+  }
+  .box {
+    width: 150px;
+    height: 400px;
+    background-color: burlywood;
+    float: inline-start;
+    border-radius: 30px;
+    margin-top: 2%;
+    margin-left: 2%;
+    border: 1px solid;
+    position: fixed;
+  }
+  .content {
+    margin-left: 200px;
+    margin-top: 2%;
+    font-size: 20px;
+    font-family: Helvetica;
+    padding-right: 40px;
+    margin-top: 20px;
+  }
+}

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Weather 195</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <style >
+
+    #video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1; /* place video behind content */
+    opacity: 0.7;
+    }
+    .navbar-nav .nav-item + .nav-item {
+    margin-left: 20px; /* control spacing */
+  }
+  body{
+    background-color: cyan;
+  }
+  </style>
+  
+  <body>
+    <video autoplay muted loop id="video-background">
+      <source src="background.mp4" type="video/mp4">
+  </video>
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary bg-black" >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Weather App</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"
+              onclick="window.location.href='aboutus.html';"
+              >About Us</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              id="city"
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit" id="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <h1 style="padding-top: 20%;" class="intro"><center>Welcome to Weather 195!</center></h1>
+    <h1 class="intro"><center>Please Enter Your City :)</center></h1>
+    <!-- WEATHER TABLES -->
+    <div class="weatherinfo">
+    <div class="container" id="boxes">
+      <h1 class="my-4 text-center">Weather for <span id="cityName"></span></h1>
+      <main>
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3 bg-dark-subtle">
+                <h4 class="my-0 fw-normal">
+                  <i class="fa-solid fa-temperature-half"></i>Temperature
+                </h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">
+                  <span id="temp"></span><small class="text-body-secondary fw-light"> ˚C</small>
+                </h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Minimum Temperature: <span id="min_temp"></span></li>
+                  <li>Max Temperature: <span id="max_temp"></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm">
+              <div class="card-header py-3 bg-dark-subtle">
+                <h4 class="my-0 fw-normal"><i class="fa-solid fa-droplet"></i> Humidity Info</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">
+                <span id="humidity"></span><small class="text-body-secondary fw-light" > %</small>
+                </h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Wind degrees: <span id="wind_degrees"></span></li>
+                  <li>Feels like: <span id="feels_like"></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm ">
+              <div class="card-header py-3 bg-dark-subtle">
+                <h4 class="my-0 fw-normal"><i class="fa-solid fa-wind"></i> Wind Info</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">
+                  <span id="wind_speed"></span><small class="text-body-secondary fw-light"> km/hr</small>
+                </h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Sunrise time: <span id="sunrise"></span></li>
+                  <li>Sunset time: <span id="sunset"></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="display-6 text-center mb-4" id="slidein">Weather of Common Cities</h2>
+
+        <!-- Weather of common cities -->
+        <div class="table-responsive" id="panel">
+          <table class="table text-center">
+            <thead>
+              <tr>
+                <th style="width: 10%"></th>
+                <th style="width: 10%">Temperature</th>
+                <th style="width: 10%">Mininum</th>
+                <th style="width: 10%">Maximum</th>
+                <th style="width: 10%">Humidity</th>
+                <th style="width: 10%">Feels like</th>
+                <th style="width: 10%">Wind Degrees</th>
+                <th style="width: 10%">Wind Speed</th>
+                <th style="width: 10%">Sunrise</th>
+                <th style="width: 10%">Sunset</th>  
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <!-- CHANGE -->
+                <th scope="row" class="text-start">London</th>
+
+                
+                <td><span id="temp_city1"></span></td>
+                <td><span id="min_temp_city1"></span></td>
+                <td><span id="max_temp_city1"></span></td>
+                <td><span id="humidity_city1"></span></td>
+                <td><span id="feels_like_city1"></span></td>
+                <td><span id="wind_degrees_city1"></span></td>
+                <td><span id="wind_speed_city1"></span></td>
+                <td><span id="sunrise_city1"></span></td>
+                <td><span id="sunset_city1"></span></td>
+              </tr>
+              <!-- CHANGE -->
+              <tr>
+                <th scope="row" class="text-start">Paris</th>
+                
+                <td><span id="temp_city2"></span></td>
+                <td><span id="min_temp_city2"></span></td>
+                <td><span id="max_temp_city2"></span></td>
+                <td><span id="humidity_city2"></span></td>
+                <td><span id="feels_like_city2"></span></td>
+                <td><span id="wind_degrees_city2"></span></td>
+                <td><span id="wind_speed_city2"></span></td>
+                <td><span id="sunrise_city2"></span></td>
+                <td><span id="sunset_city2"></span></td>
+                  <svg class="bi" width="24" height="24">
+                    <use xlink:href="#check"></use>
+                  </svg>
+                </td>
+              </tr>
+            </tbody>
+
+            <tbody>
+              <!-- CHANGE -->
+              <tr>
+                <th scope="row" class="text-start">Tokyo</th>
+                
+                <td><span id="temp_city3"></span></td>
+                <td><span id="min_temp_city3"></span></td>
+                <td><span id="max_temp_city3"></span></td>
+                <td><span id="humidity_city3"></span></td>
+                <td><span id="feels_like_city3"></span></td>
+                <td><span id="wind_degrees_city3"></span></td>
+                <td><span id="wind_speed_city3"></span></td>
+                <td><span id="sunrise_city3"></span></td>
+                <td><span id="sunset_city3"></span></td>
+              </tr>
+              <!-- CHANGE -->
+              <tr>
+                <th scope="row" class="text-start">Melbourne</th>
+                <td><span id="temp_city4"></span></td>
+                <td><span id="min_temp_city4"></span></td>
+                <td><span id="max_temp_city4"></span></td>
+                <td><span id="humidity_city4"></span></td>
+                <td><span id="feels_like_city4"></span></td>
+                <td><span id="wind_degrees_city4"></span></td>
+                <td><span id="wind_speed_city4"></span></td>
+                <td><span id="sunrise_city4"></span></td>
+                <td><span id="sunset_city4"></span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+    
+    </div>
+    <!-- Javascript link script tag -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="jquerySomething.js"></script>
+    <script src="jquery.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
